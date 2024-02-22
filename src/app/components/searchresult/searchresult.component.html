@@ -1,0 +1,88 @@
+<app-smbanner></app-smbanner>
+<div class="mt-20 min-h-[50rem]">
+
+    <div class="p-5 md:mx-14 flex flex-col justify-center items-center mx-8 sm:p-8">
+        <div *ngIf="query.length != 0" class="row text-center mb-4">
+            <h5 class="text-xl font-semibold">
+                Showing results for "{{ query }}"
+            </h5>
+        </div>
+        <div class="flex items-center justify-content-center mx-8 my-2" *ngIf="imageList.length != 0">
+            <ul class="inline-flex w-full justify-center items-center p-1 rounded bg-white space-x-2">
+                <a [ngClass]="{ disabled: currentPage == 1 }"
+                    class="p-1 rounded border text-black bg-white hover:text-white hover:bg-blue-600 hover:border-blue-600"
+                    (click)="movePage(-1)"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                    </svg></a>
+
+                <a class="page-link">
+                    {{currentPage}} of {{ totalPages }}</a>
+
+                <a [ngClass]="{ disabled: currentPage == totalPages }"
+                    class="p-1 rounded border text-black bg-white hover:text-white hover:bg-blue-600 hover:border-blue-600"
+                    (click)="movePage(+1)"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
+            </ul>
+        </div>
+        <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 p-4">
+            <span *ngFor="let item of imageList"
+                class=" group relative flex  overflow-hidden rounded-xl bg-gray-100 shadow-lg mb-8 ">
+            <div *ngIf="!loaded" class="loader absolute inset-0 flex items-center justify-center">
+                <svg class="w-6 h-6 animate-spin text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                    </circle>
+                    <path class="opacity-75" fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                    </path>
+                </svg>
+            </div>
+                <img [routerLink]="['/Image', item.id]" src="{{ item.largeImageURL }}" width="{{item.imageWidth}}"
+                    height="{{item.imageHeight}}" alt="{{ item.type }}"
+                    class="transition duration-300 group-hover:scale-110 group-hover:cursor-pointer"
+                    (load)="loaded2()" />
+              
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent via-20% to-transparent opacity-50">
+                </div>
+
+                <span
+                    class="absolute group-hover:flex transition-all duration-300 ease-in-out hidden self-end text-sm ml-4 mb-3 justify-center items-center text-white md:ml-5 md:text-lg"><img
+                        class="w-[38px] group-hover:block hidden h-[38px] mr-2 rounded-full"
+                        src="{{ item.userImageURL }}" />{{ item.user }}
+                  
+
+                </span>
+
+            </span>
+        </div>
+        <!-- <div class="flex items-center justify-content-center mx-8 my-2" *ngIf="imageList.length != 0">
+            <ul class="inline-flex w-full justify-center items-center p-1 rounded bg-white space-x-2">
+                <a [ngClass]="{ disabled: currentPage == 1 }"
+                    class="p-1 rounded border text-black bg-white hover:text-white hover:bg-blue-600 hover:border-blue-600"
+                    (click)="movePage(-1)"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                    </svg></a>
+        
+                <a class="page-link">
+                    {{currentPage}} of {{ totalPages }}</a>
+        
+                <a [ngClass]="{ disabled: currentPage == totalPages }"
+                    class="p-1 rounded border text-black bg-white hover:text-white hover:bg-blue-600 hover:border-blue-600"
+                    (click)="movePage(+1)"><svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
+            </ul>
+        </div> -->
+    </div>
+
+</div>
+<app-footer></app-footer>

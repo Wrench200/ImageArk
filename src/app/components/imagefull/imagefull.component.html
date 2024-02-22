@@ -1,0 +1,19 @@
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="flex justify-center items-center h-96">
+            <img class="w-full h-full object-cover object-center" src="{{imagelist.largeImageURL}}" alt="adad">
+        </div>
+        <div class="p-4">
+            <h1 class="text-xl font-bold text-gray-800">{{imagelist.tags}}</h1>
+            <div class="flex space-x-2 mt-2"><span class="text-sm text-gray-600">{{imagelist.views}}</span><span
+                    class="text-sm text-gray-600">{{imagelist.downloads}}</span><span class="text-sm text-gray-600">{{imagelist.likes}}</span></div>
+                </div>
+                <span
+                    class="absolute  transition-all duration-300 ease-in-out  self-end text-sm ml-4 mb-3 justify-center items-center text-white md:ml-5 md:text-lg"><img
+                        class="w-[38px] h-[38px] mr-2 rounded-full" src="{{ imagelist.userImageURL }}" alt="dfasd" />{{
+                   imagelist.user }}
+                    <!-- <a (click)="searchFromTag(tag)" href="#" class="tags" *ngFor="let tag of item.tags">{{tag}}</a> -->
+                
+                </span>
+    </div>
+</div>
