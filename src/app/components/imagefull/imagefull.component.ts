@@ -6,11 +6,13 @@ import { SendimageService } from './../../services/sendimage.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ImageserviceService } from '../../services/imageservice.service';
+import { SmbannerComponent } from '../smbanner/smbanner.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-imagefull',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule,SmbannerComponent,FooterComponent],
   templateUrl: './imagefull.component.html',
   styleUrl: './imagefull.component.scss'
 })
