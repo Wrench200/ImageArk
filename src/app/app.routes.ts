@@ -14,10 +14,12 @@ export const routes: Routes = [
         path: 'home', component: ImagelistComponent, title:'ImageArk'
     },
     {
-        path: 'Image/:id', component: ImagefullComponent, title: 'ImageArk'
+        path: 'home/:id', component: ImagefullComponent, title: 'ImageArk'
 
     },
     {
-        path: 'Result', component: SearchresultComponent, title: 'ImageArk Search result'
+        path: 'Result', component: SearchresultComponent, title: 'ImageArk'
+    }, {
+        path: 'Search/:id', component: ImagefullComponent, title: 'ImageArk'
     }
 ];

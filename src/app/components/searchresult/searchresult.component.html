@@ -41,7 +41,7 @@
                     </path>
                 </svg>
             </div>
-                <img [routerLink]="['/Image', item.id]" src="{{ item.largeImageURL }}" width="{{item.imageWidth}}"
+                <img [routerLink]="['/Search', item.id]" src="{{ item.largeImageURL }}" width="{{item.imageWidth}}"
                     height="{{item.imageHeight}}" alt="{{ item.type }}"
                     class="transition duration-300 group-hover:scale-110 group-hover:cursor-pointer"
                     (load)="loaded2()" />
