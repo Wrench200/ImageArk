@@ -8,11 +8,12 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ImageserviceService } from '../../services/imageservice.service';
 import { SmbannerComponent } from '../smbanner/smbanner.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ProfileimagePipe } from '../../interfaces/profileimage.pipe';
 
 @Component({
   selector: 'app-imagefull',
   standalone: true,
-  imports: [CommonModule, RouterModule,SmbannerComponent,FooterComponent],
+  imports: [CommonModule, RouterModule,SmbannerComponent,FooterComponent,ProfileimagePipe],
   templateUrl: './imagefull.component.html',
   styleUrl: './imagefull.component.scss'
 })
@@ -81,6 +82,7 @@ export class ImagefullComponent implements OnInit {
           return
         }
         this.imagelist = result.hits[0]
+
 
         this.getrelated(result.hits[0].tags)
       }

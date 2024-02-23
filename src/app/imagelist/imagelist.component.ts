@@ -8,10 +8,11 @@ import { BannerComponent } from '../components/banner/banner.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { Router, RouterModule } from '@angular/router';
 import { SmbannerComponent } from '../components/smbanner/smbanner.component';
+import { ProfileimagePipe } from '../interfaces/profileimage.pipe';
 @Component({
   selector: 'app-imagelist',
   standalone: true,
-  imports: [CommonModule, BannerComponent, FooterComponent,RouterModule],
+  imports: [CommonModule, BannerComponent, FooterComponent,RouterModule, ProfileimagePipe],
   templateUrl: './imagelist.component.html',
   styleUrl: './imagelist.component.scss'
 })

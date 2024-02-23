@@ -6,10 +6,11 @@ import { Image } from '../../interfaces/image-interface';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { SmbannerComponent } from '../smbanner/smbanner.component';
+import { ProfileimagePipe } from '../../interfaces/profileimage.pipe';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterModule, FooterComponent, SmbannerComponent],
+  imports: [CommonModule, RouterModule, FooterComponent, SmbannerComponent, ProfileimagePipe],
   selector: 'app-searchresult',
   templateUrl: './searchresult.component.html',
   styleUrls: ['./searchresult.component.scss']
