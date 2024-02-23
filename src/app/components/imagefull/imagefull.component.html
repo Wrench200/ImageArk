@@ -1,21 +1,24 @@
 <app-smbanner></app-smbanner>
 <div class="p-5  min-h-[50rem] flex flex-col mt-10  md:mt-20 justify-center items-center sm:pt-0 sm:p-8">
 
-   
+
     <div class=" container flex justify-center h-full ">
-<div *ngIf="!loaded" class="loader absolute inset-0 flex items-center justify-center">
-    <svg class="w-6 h-6 animate-spin text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
-        </circle>
-        <path class="opacity-75" fill="currentColor"
-            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-        </path>
-    </svg>
-</div>
-        <img src="{{imagelist.largeImageURL}}" alt="{{imagelist.tags}}" (load)="loaded2()" class="md:w-[25rem]  rounded-md ">
+        <div *ngIf="!loaded" class="loader absolute inset-0 flex items-center justify-center">
+            <svg class="w-6 h-6 animate-spin text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                </circle>
+                <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+            </svg>
+        </div>
+        <img src="{{imagelist.largeImageURL}}" alt="{{imagelist.tags}}" (load)="loaded2()"
+            class="md:w-[25rem]  rounded-md ">
 
     </div>
-    <div class=" border-b-2 h-fit items-center border-gray-200 md:flex flex-col md:justify-center justify-between w-full">
+    <div
+        class=" h-fit items-center border-gray-200 md:flex flex-col md:justify-center justify-between w-full">
 
 
         <div class="my-4  mt-4 w-fit h-full  ">
@@ -124,9 +127,9 @@
                     </g>
                 </svg>{{imagelist.views}}</span>
         </div>
-<a href="{{imagelist.pageURL}}"
-    class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">View
-    on pixabay</a>
+        <a href="{{imagelist.pageURL}}"
+            class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2  text-center me-2  dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">View
+            on pixabay</a>
     </div>
     <span class="font-semibold my-2 text-left w-full text-xl">Related </span>
     <div class="columns-1 mt-4 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 ">
