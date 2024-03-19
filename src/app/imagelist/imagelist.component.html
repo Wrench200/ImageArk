@@ -5,7 +5,7 @@
     <div class="p-5 md:mx-14 flex flex-col justify-center items-center mx-8 sm:pt-0 sm:p-8">
         <div class="text-center w-screen md:w-full p-4 overflow-x-auto whitespace-nowrap scrollbar-hide mb-4">
             <span (click)="searchFromTag(item)" *ngFor="let item of tags"
-                class="inline-flex items-center bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-2 rounded  hover:bg-gray-200 cursor-pointer">{{item}}</span>
+                class="inline-flex items-center bg-gray-100 text-gray-800 text-sm font-medium me-2 px-2.5 py-2 rounded  hover:bg-gray-200 cursor-pointer">{{item}}</span>
         </div>
         <div class="flex items-center justify-content-center mx-8 my-2" *ngIf="imageList.length != 0">
             <ul class="inline-flex w-full justify-center items-center p-1 rounded bg-white space-x-2">

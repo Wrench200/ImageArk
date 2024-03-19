@@ -136,6 +136,10 @@ console.log(tags);
   loaded2() {
     this.loaded = true;
   }
+  reload() {
+    location.reload()
+  }
+  
 }
 
 
