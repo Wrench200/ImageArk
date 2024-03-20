@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-smbanner',
   standalone: true,
-  imports: [CommonModule,RouterModule,FormsModule, ],
+  imports: [CommonModule,RouterModule,FormsModule, SearchresultComponent ],
   templateUrl: './smbanner.component.html',
   styleUrl: './smbanner.component.scss'
 })
@@ -56,9 +56,12 @@ export class SmbannerComponent {
 
     this.router.navigate(['/Result'], {
       queryParams: { query: this.searchterm }
-  
+      
     })
-    location.reload()
+    
+    
+    
+
 
 
   }
